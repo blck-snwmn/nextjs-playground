@@ -1,4 +1,5 @@
 import { useRouter } from "next/router";
+import { Box } from "@chakra-ui/react";
 
 export async function getStaticPaths() {
   return {
@@ -23,10 +24,10 @@ function Books({ book }) {
   const now = new Date(book.createdAt);
 
   return (
-    <div>
+    <Box m={2} color="#f00">
       {book.id}-{book.name}:{now.toLocaleDateString()}-
       {now.toLocaleTimeString()}
-    </div>
+    </Box>
   );
 }
 
