@@ -70,7 +70,7 @@ function Sample2() {
   );
 }
 
-const AccordionSample: FC<{ title: ReactNode }> = ({ title, children }) => {
+const AccordionSample: FC<{ title: ReactNode, children?: React.ReactNode | React.ReactNode[] }> = ({ title, children }) => {
   const [loaded, setLoaded] = React.useState(false);
   return (
     <Accordion allowToggle reduceMotion>

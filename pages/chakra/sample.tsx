@@ -28,8 +28,8 @@ function Sample() {
     console.log("textarea-isInvalid", isInvalid);
     setIsInvalid(isInvalid);
   };
-
-  const [resizeValue, setResizeValue] = useState("none");
+  const [tmpResizeValue, setResizeValue] = useState("none");
+  const resizeValue  = tmpResizeValue as "none"| "horizontal" | "vertical" | "both" ?? "none"
 
   return (
     <Box m={2} color="#f00">
@@ -59,7 +59,7 @@ function Sample() {
           <Switch id="switch!" />
         </FormControl>
         <Box>
-          <RadioGroup defaultValue={resizeValue} onChange={setResizeValue}>
+          <RadioGroup defaultValue={tmpResizeValue} onChange={setResizeValue}>
             <Stack direction="row">
               <Radio value="horizontal">horizontal</Radio>
               <Radio value="vertical">vertical</Radio>
